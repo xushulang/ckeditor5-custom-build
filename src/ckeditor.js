@@ -73,10 +73,10 @@ import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
 import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount.js';
 import EditorWatchdog from '@ckeditor/ckeditor5-watchdog/src/editorwatchdog.js';
 
-class Editor extends ClassicEditor {}
+export default class Editor extends ClassicEditor {}
 
 // Plugins to include in the build.
-Editor.builtinPlugins = [Alignment, Autoformat, AutoImage, AutoLink, Autosave, BlockQuote, Bold, CKFinderUploadAdapter, Code, CodeBlock, DataFilter, DataSchema, Essentials, FindAndReplace, FontBackgroundColor, FontColor, FontFamily, FontSize, GeneralHtmlSupport, Heading, Highlight, HorizontalLine, HtmlEmbed, Image, ImageCaption, ImageInsert, ImageResize, ImageStyle, ImageToolbar, ImageUpload, Indent, IndentBlock, Italic, Link, LinkImage, List, ListStyle, Markdown, MediaEmbed, MediaEmbedToolbar, Mention, PageBreak, Paragraph, PasteFromOffice, RemoveFormat, SourceEditing, SpecialCharacters, SpecialCharactersArrows, SpecialCharactersCurrency, SpecialCharactersEssentials, SpecialCharactersLatin, SpecialCharactersMathematical, SpecialCharactersText, StandardEditingMode, Strikethrough, Subscript, Superscript, Table, TableCaption, TableCellProperties, TableProperties, TableToolbar, TextPartLanguage, TextTransformation, Title, TodoList, Underline, WordCount];
+Editor.builtinPlugins = [Alignment, Autoformat, AutoImage, AutoLink, Autosave, BlockQuote, Bold, CKFinderUploadAdapter, Code, CodeBlock, DataFilter, DataSchema, Essentials, FindAndReplace, FontBackgroundColor, FontColor, FontFamily, FontSize, GeneralHtmlSupport, Heading, Highlight, HorizontalLine, HtmlEmbed, Image, ImageCaption, ImageInsert, ImageResize, ImageStyle, ImageToolbar, ImageUpload, Indent, IndentBlock, Italic, Link, LinkImage, List, ListStyle, Markdown, MediaEmbed, MediaEmbedToolbar, Mention, PageBreak, Paragraph, PasteFromOffice, RemoveFormat, SourceEditing, SpecialCharacters, SpecialCharactersArrows, SpecialCharactersCurrency, SpecialCharactersEssentials, SpecialCharactersLatin, SpecialCharactersMathematical, SpecialCharactersText, StandardEditingMode, Strikethrough, Subscript, Superscript, Table, TableCaption, TableCellProperties, TableProperties, TableToolbar, TextPartLanguage, TextTransformation, Title, TodoList, Underline, WordCount, EditorWatchdog];
 
 Editor.defaultConfig = {
     toolbar: {
@@ -90,5 +90,3 @@ Editor.defaultConfig = {
     },
     language: 'zh-cn',
 };
-
-export default { Editor, EditorWatchdog };
