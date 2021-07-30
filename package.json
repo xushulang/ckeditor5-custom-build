@@ -2,9 +2,15 @@
     "name": "@xushulang/ckeditor5-custom-build",
     "author": "xushulang",
     "description": "The custom build editor build of CKEditor 5 – the best browser-based rich text editor.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": "GPL-2.0-or-later",
     "main": "./build/ckeditor.js",
+    "homepage": "https://github.com/xushulang/ckeditor5-custom-build",
+    "bugs": "https://github.com/xushulang/ckeditor5-custom-build/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xushulang/ckeditor5-custom-build.git"
+    },
     "dependencies": {
         "@ckeditor/ckeditor5-adapter-ckfinder": "^29.0.0",
         "@ckeditor/ckeditor5-alignment": "^29.0.0",

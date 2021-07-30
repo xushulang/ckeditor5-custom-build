@@ -40,9 +40,9 @@ import Link from '@ckeditor/ckeditor5-link/src/link.js';
 import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
 import ListStyle from '@ckeditor/ckeditor5-list/src/liststyle.js';
-import Markdown from '@ckeditor/ckeditor5-markdown-gfm/src/markdown.js';
+// import Markdown from '@ckeditor/ckeditor5-markdown-gfm/src/markdown.js';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
-import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js';
+// import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js';
 import Mention from '@ckeditor/ckeditor5-mention/src/mention.js';
 import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
@@ -73,20 +73,96 @@ import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
 import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount.js';
 import EditorWatchdog from '@ckeditor/ckeditor5-watchdog/src/editorwatchdog.js';
 
-export default class Editor extends ClassicEditor {}
+class Editor extends ClassicEditor {}
 
 // Plugins to include in the build.
-Editor.builtinPlugins = [Alignment, Autoformat, AutoImage, AutoLink, Autosave, BlockQuote, Bold, CKFinderUploadAdapter, Code, CodeBlock, DataFilter, DataSchema, Essentials, FindAndReplace, FontBackgroundColor, FontColor, FontFamily, FontSize, GeneralHtmlSupport, Heading, Highlight, HorizontalLine, HtmlEmbed, Image, ImageCaption, ImageInsert, ImageResize, ImageStyle, ImageToolbar, ImageUpload, Indent, IndentBlock, Italic, Link, LinkImage, List, ListStyle, Markdown, MediaEmbed, MediaEmbedToolbar, Mention, PageBreak, Paragraph, PasteFromOffice, RemoveFormat, SourceEditing, SpecialCharacters, SpecialCharactersArrows, SpecialCharactersCurrency, SpecialCharactersEssentials, SpecialCharactersLatin, SpecialCharactersMathematical, SpecialCharactersText, StandardEditingMode, Strikethrough, Subscript, Superscript, Table, TableCaption, TableCellProperties, TableProperties, TableToolbar, TextPartLanguage, TextTransformation, Title, TodoList, Underline, WordCount, EditorWatchdog];
+Editor.builtinPlugins = [
+    Alignment,
+    Autoformat,
+    AutoImage,
+    AutoLink,
+    Autosave,
+    BlockQuote,
+    Bold,
+    CKFinderUploadAdapter,
+    Code,
+    CodeBlock,
+    DataFilter,
+    DataSchema,
+    Essentials,
+    FindAndReplace,
+    FontBackgroundColor,
+    FontColor,
+    FontFamily,
+    FontSize,
+    GeneralHtmlSupport,
+    Heading,
+    Highlight,
+    HorizontalLine,
+    HtmlEmbed,
+    Image,
+    ImageCaption,
+    ImageInsert,
+    ImageResize,
+    ImageStyle,
+    ImageToolbar,
+    ImageUpload,
+    Indent,
+    IndentBlock,
+    Italic,
+    Link,
+    LinkImage,
+    List,
+    ListStyle,
+    // Markdown,
+    MediaEmbed,
+    // MediaEmbedToolbar,
+    Mention,
+    PageBreak,
+    Paragraph,
+    PasteFromOffice,
+    RemoveFormat,
+    SourceEditing,
+    SpecialCharacters,
+    SpecialCharactersArrows,
+    SpecialCharactersCurrency,
+    SpecialCharactersEssentials,
+    SpecialCharactersLatin,
+    SpecialCharactersMathematical,
+    SpecialCharactersText,
+    StandardEditingMode,
+    Strikethrough,
+    Subscript,
+    Superscript,
+    Table,
+    TableCaption,
+    TableCellProperties,
+    TableProperties,
+    TableToolbar,
+    TextPartLanguage,
+    TextTransformation,
+    Title,
+    TodoList,
+    Underline,
+    WordCount,
+];
 
+// Editor configuration.
 Editor.defaultConfig = {
     toolbar: {
-        items: ['undo', 'redo', '|', 'heading', 'textPartLanguage', '|', 'sourceEditing', 'fontFamily', 'fontSize', 'fontColor', 'fontBackgroundColor', 'highlight', 'bold', 'underline', 'italic', '|', 'removeFormat', 'subscript', 'superscript', 'specialCharacters', 'insertTable', 'bulletedList', 'numberedList', 'todoList', '|', 'alignment', 'outdent', 'indent', '|', 'link', 'imageInsert', 'mediaEmbed', '|', 'findAndReplace', 'code', 'codeBlock', 'htmlEmbed', 'horizontalLine', 'pageBreak', 'blockQuote', 'restrictedEditingException', 'strikethrough'],
+        items: ['undo', 'redo', '|', 'textPartLanguage', 'heading', '|', 'sourceEditing', 'fontFamily', 'fontSize', 'fontColor', 'fontBackgroundColor', 'highlight', 'bold', 'underline', 'italic', '|', 'removeFormat', 'subscript', 'superscript', 'specialCharacters', 'insertTable', 'bulletedList', 'numberedList', 'todoList', '|', 'alignment', 'outdent', 'indent', '|', 'link', 'imageInsert', 'mediaEmbed', '|', 'findAndReplace', 'code', 'codeBlock', 'htmlEmbed', 'horizontalLine', 'pageBreak', 'blockQuote', 'restrictedEditingException', 'strikethrough'],
+        shouldNotGroupWhenFull: true,
     },
     image: {
         toolbar: ['imageTextAlternative', 'imageStyle:inline', 'imageStyle:block', 'imageStyle:side', 'linkImage'],
     },
+    // mediaEmbed: {
+    //     toolbar: [],
+    // },
     table: {
         contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableCellProperties', 'tableProperties'],
     },
     language: 'zh-cn',
 };
+
+export default { Editor, EditorWatchdog };
