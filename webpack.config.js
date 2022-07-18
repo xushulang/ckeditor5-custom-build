@@ -12,6 +12,7 @@ const webpack = require('webpack');
 const { bundler, styles } = require('@ckeditor/ckeditor5-dev-utils');
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     devtool: 'source-map',
@@ -55,26 +56,21 @@ module.exports = {
             banner: bundler.getLicenseBanner(),
             raw: true,
         }),
+        new MiniCssExtractPlugin({
+            filename: 'ckeditor.css',
+        }),
     ],
 
     module: {
         rules: [
             {
-                test: /\.svg$/,
+                test: /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
                 use: ['raw-loader'],
             },
             {
-                test: /\.css$/,
+                test: /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css$/,
                 use: [
-                    {
-                        loader: 'style-loader',
-                        options: {
-                            injectType: 'singletonStyleTag',
-                            attributes: {
-                                'data-cke': true,
-                            },
-                        },
-                    },
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                     },
