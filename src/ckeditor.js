@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) 2014-2021, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2014-2022, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
@@ -39,7 +39,7 @@ import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
 import List from '@ckeditor/ckeditor5-list/src/list';
-import ListStyle from '@ckeditor/ckeditor5-list/src/liststyle';
+import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties';
 // import Markdown from '@ckeditor/ckeditor5-markdown-gfm/src/markdown';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 // import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar';
@@ -63,11 +63,11 @@ import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableCaption from '@ckeditor/ckeditor5-table/src/tablecaption';
 import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
+import TableColumnResize from '@ckeditor/ckeditor5-table/src/tablecolumnresize';
 import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
-import TextPartLanguage from '@ckeditor/ckeditor5-language/src/textpartlanguage';
+// import TextPartLanguage from '@ckeditor/ckeditor5-language/src/textpartlanguage';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
-// import Title from '@ckeditor/ckeditor5-heading/src/title';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
@@ -113,7 +113,7 @@ Editor.builtinPlugins = [
     Link,
     LinkImage,
     List,
-    ListStyle,
+    ListProperties,
     // Markdown,
     MediaEmbed,
     // MediaEmbedToolbar,
@@ -137,11 +137,11 @@ Editor.builtinPlugins = [
     Table,
     TableCaption,
     TableCellProperties,
+    TableColumnResize,
     TableProperties,
     TableToolbar,
-    TextPartLanguage,
+    // TextPartLanguage,
     TextTransformation,
-    // Title,
     TodoList,
     Underline,
     WordCount,
@@ -150,7 +150,7 @@ Editor.builtinPlugins = [
 // Editor configuration.
 Editor.defaultConfig = {
     toolbar: {
-        items: ['undo', 'redo', '|', 'textPartLanguage', 'heading', '|', 'sourceEditing', 'fontFamily', 'fontSize', 'fontColor', 'fontBackgroundColor', 'highlight', 'bold', 'underline', 'italic', '|', 'removeFormat', 'subscript', 'superscript', 'specialCharacters', 'insertTable', 'bulletedList', 'numberedList', 'todoList', '|', 'alignment', 'outdent', 'indent', '|', 'link', 'imageInsert', 'mediaEmbed', '|', 'findAndReplace', 'code', 'codeBlock', 'htmlEmbed', 'horizontalLine', 'pageBreak', 'blockQuote', 'restrictedEditingException', 'strikethrough'],
+        items: ['undo', 'redo', '|', 'heading', '|', 'sourceEditing', 'fontFamily', 'fontSize', 'fontColor', 'fontBackgroundColor', 'highlight', 'bold', 'underline', 'italic', '|', 'removeFormat', 'subscript', 'superscript', 'specialCharacters', 'insertTable', 'bulletedList', 'numberedList', 'todoList', '|', 'alignment', 'outdent', 'indent', '|', 'link', 'imageInsert', 'mediaEmbed', '|', 'findAndReplace', 'code', 'codeBlock', 'htmlEmbed', 'horizontalLine', 'pageBreak', 'blockQuote', 'restrictedEditingException', 'strikethrough'],
         shouldNotGroupWhenFull: true,
     },
     image: {
